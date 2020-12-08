@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.back-image {
+  width: 100%;
+  height: 30rem;
+}
+.container-image {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.text-back {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  color: rgb(64, 34, 92);
+  width: 30%;
+}
+
+.rec-img {
+  width: 80%;
+  height: auto;
+}
+.title-our-recipes {
+  color: rgb(236, 126, 75);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container-recipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 25% 100px auto; */
+}
+.recipe-card {
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title-card, .products, .preparation {
+  text-align: center;
+}
+.rec-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.title-card {
+  color: rgb(236, 126, 75);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
