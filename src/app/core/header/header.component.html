@@ -1,23 +1,26 @@
 <header id="header">
-  <a class="nav-logo" href="/home/"><img class="logo-svg" src="../../../assets/my-recipes.svg"
+  <a class="nav-logo" routerLink="/home/" ><img class="logo-svg" src="../../../assets/my-recipes.svg"
       alt="logo My recipes" /></a>
   <ul class="navbar">
     <!-- {{#if isLoggedIn}} -->
-    <li class="nav-item">
-      <a class="nav-link" href="">My Recipes</a>
+    <li *ngIf="isLogged"  class="nav-item">
+      <a class="nav-link" routerLink="">My Recipes</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/user/logout">Logout as </a>
+    <li *ngIf="isLogged"  class="nav-item">
+      <a class="nav-link" routerLink="">New Recipe</a>
+    </li>
+    <li *ngIf="isLogged" class="nav-item">
+      <a class="nav-link" (click)="logoutHandler()">Logout</a>
     </li>
     <!-- {{else}} -->
     <li class="nav-item">
-      <a class="nav-link" href="/about/">About</a>
+      <a *ngIf="!isLogged" class="nav-link" routerLink="/about/">About</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/user/login">Login</a>
+      <a *ngIf="!isLogged" class="nav-link" routerLink="/login" >Login</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/user/register">Register</a>
+      <a *ngIf="!isLogged" class="nav-link" routerLink="/register" >Register</a>
     </li>
     <!-- {{/if}} -->
   </ul>

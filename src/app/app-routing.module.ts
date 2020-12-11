@@ -29,14 +29,18 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     data: {
-      title: 'REGISTER'
+      isLogged: false,
+      noNavigation: true,
+      title: 'REGISTER USER'
     }
   },
   {
     path: 'login',
     component: LoginComponent,
     data: {
-      title: 'LOGIN'
+      isLogged: false,
+      noNavigation: true,
+      title: 'LOGIN USER'
     }
   },
   {

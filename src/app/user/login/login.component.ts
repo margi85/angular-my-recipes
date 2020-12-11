@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  isLoading = false;
+  errorMessage = '';
+
+  constructor(
+    private userService: UserService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  submitFormHandler(formValue: { email: string, password: string}): void {
+    this.errorMessage = '';
+    this.isLoading = true;
+    this.userService.login(formValue).subscribe(() => {
+      this.isLoading = false;
+      this.router.navigate(['/']);
+    }, (err) => {
+      this.errorMessage = 'ERROR',
+      this.isLoading = false;
+    });
   }
 
 }
