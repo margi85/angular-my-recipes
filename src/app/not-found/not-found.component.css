@@ -1,0 +1,28 @@
+.not-found {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(67, 112, 153);
+  font-size: 2rem;
+}
+
+.err-404 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(67, 112, 153);
+  font-size: 4rem;
+  text-align: center;
+}
+
+.msg {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(67, 112, 153);
+  font-size: 2rem;
+  text-align: center;
+}
+
+img {
+  width: 20%;
+  height: auto;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

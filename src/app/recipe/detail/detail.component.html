@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<div class="container-details">
+
+  <div class="container-image">
+    <div class="img-cont">
+      <img class="img" [attr.src]="recipe.imageURL">
+    </div>
+  </div>
+
+  <div class="container-image">
+    <div class="title-details">{{recipe.title}}</div>
+    <p>Продукти:</p>
+    <div class="ingredients-details">{{recipe.ingredients}}</div>
+    <p>Приготвяне:</p>
+    <div class="prep-details">{{recipe.preparation}}</div>
+    <button type="button" class="cancelbtn" routerLink="/">Назад</button>
+  </div>
+
+</div>
+<app-footer></app-footer>

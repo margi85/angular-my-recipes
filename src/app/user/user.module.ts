@@ -7,6 +7,7 @@ import { CoreModule } from '../core/core.module';
 import { LoaderComponent } from '../shared/loader/loader.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserService } from './user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserService } from './user.service';
     FormsModule,
     CoreModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     UserService

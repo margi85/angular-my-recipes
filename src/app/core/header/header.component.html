@@ -7,10 +7,10 @@
       <a class="nav-link" routerLink="">My Recipes</a>
     </li>
     <li *ngIf="isLogged"  class="nav-item">
-      <a class="nav-link" routerLink="">New Recipe</a>
+      <a class="nav-link" routerLink="/recipes/new">New Recipe</a>
     </li>
     <li *ngIf="isLogged" class="nav-item">
-      <a class="nav-link" (click)="logoutHandler()">Logout</a>
+      <a class="nav-link" href="/" (click)="logoutHandler()">Logout</a>
     </li>
     <!-- {{else}} -->
     <li class="nav-item">

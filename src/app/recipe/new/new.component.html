@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="new-recipe-form">
+  <div class="header-background">
+    <span class="text-create">СЪЗДАЙ НОВА РЕЦЕПТА</span>
+  </div>
+  <form #f="ngForm" (ngSubmit)="submitHandler(f.value)">
+    <div class="new-recipe">
+      <label for="title">Име на рецепта <span class="red">*</span></label>
+      <input #title="ngModel" type="text" name="title" id="title" ngModel required minlength="5">
+      <p class="error" *ngIf="title.touched && title.errors?.required">
+        Recipe name is required.
+      </p>
+      <p class="error" *ngIf="title.touched && title.errors?.minlength">
+        Theme name must be at least 5 characters long.
+      </p>
+    </div>
+
+    <div class="new-recipe">
+      <label for="ingredients">Съставки: <span class="red">*</span></label>
+      <textarea #ingredients="ngModel" type="text" name="ingredients" id="ingredients" ngModel required ></textarea>
+      <p class="error" *ngIf="ingredients.touched && ingredients.errors?.required">
+        The field with the ingredients is required.
+      </p>
+    </div>
+
+    <div class="new-recipe">
+      <label for="preparation">Начин на приготвяне: <span class="red">*</span></label>
+      <textarea #preparation="ngModel" type="text" name="preparation" id="preparation" rows="8" class="height" ngModel required
+        minlength="10"></textarea>
+      <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
+        The field with your preparation method is required.
+      </p>
+      <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
+        Preparation method must be at least 10 characters long.
+      </p>
+    </div>
+
+    <div class="new-recipe">
+      <label for="imageURL">Снимка <span class="red">*</span></label>
+      <input #imageURL="ngModel" type="text" name="imageURL" id="imageURL" ngModel required >
+      <p class="error" *ngIf="imageURL.touched && imageURL.errors?.required">
+        The field with the image is required.
+      </p>
+    </div>
+    
+    <div class="clearfix">
+      <button type="reset" class="cancelbtn">Cancel</button>
+      <button class="signupbtn">Post</button>
+    </div>
+
+  </form>
+</div>
+<app-footer></app-footer>

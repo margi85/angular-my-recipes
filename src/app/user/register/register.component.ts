@@ -36,8 +36,9 @@ export class RegisterComponent implements OnInit {
 
   submitHandler(): void {
     const data = this.form.value;
+
     this.isLoading = true;
-    this.userService.login(data).subscribe({
+    this.userService.register({ email: data.email, password: data.password}).subscribe({
       next: () => {
       this.isLoading = false;
       this.router.navigate(['/login']);

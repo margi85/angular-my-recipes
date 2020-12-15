@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RecipeModule } from './recipe/recipe.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     CoreModule,
     UserModule,
-    HttpClientModule
+    HttpClientModule,
+    RecipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
