@@ -9,14 +9,26 @@ import { AboutComponent } from './about/about.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
-import { RecipeModule } from './recipe/recipe.module';
+import { NewComponent } from './recipe/new/new.component';
+import { RecipesComponent } from './recipe/recipes/recipes.component';
+import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
+import { RecipeListItemComponent } from './recipe/recipe-list-item/recipe-list-item.component';
+import { DetailComponent } from './recipe/detail/detail.component';
+import { RecipeService } from './recipe/recipe.service';
+import { UserService } from './user/user.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    AboutComponent
+    AboutComponent,
+    NewComponent, 
+    RecipesComponent, 
+    RecipeListComponent, 
+    RecipeListItemComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +36,12 @@ import { RecipeModule } from './recipe/recipe.module';
     CoreModule,
     UserModule,
     HttpClientModule,
-    RecipeModule
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    RecipeService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

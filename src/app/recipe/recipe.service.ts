@@ -10,7 +10,7 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   loadRecipeList(): Observable<IRecipe[]> {
-    return this.http.get<IRecipe[]>(`/recipes`);
+    return this.http.get<IRecipe[]>(`${this.backendURL}/data/recipes`);
   }
 
   loadRecipe(id: string): Observable<IRecipe> {

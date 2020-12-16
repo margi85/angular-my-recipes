@@ -1,10 +1,9 @@
 <div class="recipe-container">
-  <div class="recipe-name-wrapper">
     <div class="recipe-name">
-      <a [routerLink]="['/recipe/detail', recipe._id]" class="normal">
+      <a [routerLink]="['/recipe/detail', recipe.objectId]" class="normal">
         <h2>{{recipe.title}}</h2>
       </a>
-      <div class="columns">
+    
         <div class="img-box">
           <img src="{{recipe.imageURL}}">
         </div>
@@ -14,7 +13,9 @@
         </ul>
         <div class="prepMethod">Приготвяне:</div>
         <div class="description">{{recipe.preparation}}</div>
-      </div>
+        <div class="btns-container">
+          <button type="submit" routerLink="/recipes/edit/{{recipe.objectId}}" class="btn">EDIT</button>
+          <button type="submit" routerLink="/recipes/delete/{{recipe.objectId}}" class="btn">DELETE</button>  
+        </div>
     </div>
-  </div>
 </div>
