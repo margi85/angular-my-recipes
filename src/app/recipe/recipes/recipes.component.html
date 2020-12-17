@@ -1,3 +1,23 @@
 <app-header></app-header>
-<app-recipe-list></app-recipe-list>
+
+<div class="res-cont" *ngIf="recipeList">
+  <div class="recipe-card" *ngFor="let recipe of recipeList">
+    <h3>{{recipe.title}}</h3>
+    <img class="image-recipe" src="{{recipe.imageURL}}">
+    <p class="products">Продукти:</p>
+    <div class="ingr">{{recipe.ingredients}}</div>
+
+    <p class="prepMethod">Приготвяне:</p>
+    <div class="description">{{recipe.preparation}}</div>
+
+    <div class="btns-container">
+      <button type="submit" routerLink="/recipes/edit/{{recipe.objectId}}" class="btn-edit">EDIT</button>
+      <button type="submit" routerLink="/recipes/delete/{{recipe.objectId}}" class="btn-delete">DELETE</button>
+    </div>
+  </div>
+  <div *ngIf="recipeList.length === 0">No Recipes!</div>
+</div>
+<div *ngIf="!recipeList">
+  Loading...
+</div>
 <app-footer></app-footer>

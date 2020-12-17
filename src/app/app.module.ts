@@ -11,7 +11,6 @@ import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NewComponent } from './recipe/new/new.component';
 import { RecipesComponent } from './recipe/recipes/recipes.component';
-import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
 import { RecipeListItemComponent } from './recipe/recipe-list-item/recipe-list-item.component';
 import { DetailComponent } from './recipe/detail/detail.component';
 import { RecipeService } from './recipe/recipe.service';
@@ -26,7 +25,6 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     NewComponent, 
     RecipesComponent, 
-    RecipeListComponent, 
     RecipeListItemComponent,
     DetailComponent
   ],

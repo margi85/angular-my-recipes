@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailComponent } from './recipe/detail/detail.component';
 import { NewComponent } from './recipe/new/new.component';
+import { RecipeListItemComponent } from './recipe/recipe-list-item/recipe-list-item.component';
 import { RecipesComponent } from './recipe/recipes/recipes.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -69,6 +70,24 @@ const routes: Routes = [
     component: DetailComponent,
     data: {
       title: 'RECIPE DETAIL',
+      isLogged: true
+    }
+  },
+  {
+    path: 'recipes/edit/:id',
+    canActivate: [AuthGuard],
+    component: RecipeListItemComponent,
+    data: {
+      title: 'RECIPE EDIT',
+      isLogged: true
+    }
+  },
+  {
+    path: 'recipes/delete/:id',
+    canActivate: [AuthGuard],
+    component: HomeComponent,
+    data: {
+      title: 'RECIPE DELETE',
       isLogged: true
     }
   },

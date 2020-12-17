@@ -18,6 +18,11 @@ export class RecipeService {
     .get<IRecipe>(`${this.backendURL}/data/recipes/${id}`);
   }
 
+  loadRecipesByOwnerId(ownerId: string): Observable<IRecipe[]> {
+    return this.http
+    .get<IRecipe[]>(`${this.backendURL}/data/recipes?where=ownerId%3D'${ownerId}'`);
+  }
+
   saveRecipe(data: any): Observable<IRecipe> {
     return this.http
       .post<IRecipe>(`${this.backendURL}/data/recipes`, data);

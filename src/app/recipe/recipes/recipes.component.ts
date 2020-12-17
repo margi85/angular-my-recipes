@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IRecipe } from 'src/app/shared/interfaces/recipe';
+import { UserService } from 'src/app/user/user.service';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipes',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
-  constructor() { }
+  recipe: IRecipe = <any>{};
+  recipeList: IRecipe[] = [];
+
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
+  constructor(private userService: UserService,
+    public recipeService: RecipeService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.recipeService.loadRecipesByOwnerId(this.userService.userId).subscribe(recipeList => {
+      this.recipeList = recipeList;
+    });
   }
 
 }
