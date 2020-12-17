@@ -26,7 +26,7 @@ export class NewComponent implements OnInit {
     this.recipeService.saveRecipe(data)
       .subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/recipes']);
         },
         error: (err) => {
 

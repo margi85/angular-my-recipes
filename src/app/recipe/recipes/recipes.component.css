@@ -26,7 +26,7 @@ h3, p {
 }
 
 .btns-container {
-  width: 50%;
+  width: 40%;
   margin: 0.5em auto;
   display: block;
 }
@@ -39,7 +39,7 @@ h3, p {
   border-radius: 0.2rem;
   padding: 0.4em;
   border-style: solid;
-  width: 8em;
+  width: 6em;
 }
 
 .btn-delete {
@@ -50,7 +50,7 @@ h3, p {
   border-radius: 0.2rem;
   padding: 0.4em;
   border-style: solid;
-  width: 8em;
+  width: 6em;
 }
 
 .ingr, .description {

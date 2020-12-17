@@ -1,21 +1,55 @@
-<div class="recipe-container">
-    <div class="recipe-name">
-      <a [routerLink]="['/recipe/detail', recipe.objectId]" class="normal">
-        <h2>{{recipe.title}}</h2>
-      </a>
-    
-        <div class="img-box">
-          <img src="{{recipe.imageURL}}">
-        </div>
-        <div class="products">Продукти:</div>
-        <ul class="ingredients-box">
-          <li *ngFor="let ingredient of recipe.ingredients">{{recipe.ingredients}}</li>
-        </ul>
-        <div class="prepMethod">Приготвяне:</div>
-        <div class="description">{{recipe.preparation}}</div>
-        <div class="btns-container">
-          <button type="submit" routerLink="/recipes/edit/{{recipe.objectId}}" class="btn">EDIT</button>
-          <button type="submit" routerLink="/recipes/delete/{{recipe.objectId}}" class="btn">DELETE</button>  
-        </div>
+<app-header></app-header>
+
+<div class="new-recipe-form">
+  <div class="header-background">
+    <span class="text-create">РЕДАКТИРАЙ РЕЦЕПТА</span>
+  </div>
+  <form #f="ngForm" (ngSubmit)="submitHandler(f.value)">
+    <div class="new-recipe">
+      <label for="title">Име на рецепта <span class="red">*</span></label>
+      <input #title="ngModel" type="text" name="title" id="title" [ngModel]="recipe.title" required minlength="5">
+      <p class="error" *ngIf="title.touched && title.errors?.required">
+        Recipe name is required.
+      </p>
+      <p class="error" *ngIf="title.touched && title.errors?.minlength">
+        Theme name must be at least 5 characters long.
+      </p>
     </div>
+
+    <div class="new-recipe">
+      <label for="ingredients">Съставки: <span class="red">*</span></label>
+      <textarea #ingredients="ngModel" type="text" name="ingredients" id="ingredients" [ngModel]="recipe.ingredients" required ></textarea>
+      <p class="error" *ngIf="ingredients.touched && ingredients.errors?.required">
+        The field with the ingredients is required.
+      </p>
+    </div>
+
+    <div class="new-recipe">
+      <label for="preparation">Начин на приготвяне: <span class="red">*</span></label>
+      <textarea #preparation="ngModel" type="text" name="preparation" id="preparation" rows="8" class="height" [ngModel]="recipe.preparation" required
+        minlength="10"></textarea>
+      <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
+        The field with your preparation method is required.
+      </p>
+      <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
+        Preparation method must be at least 10 characters long.
+      </p>
+    </div>
+
+    <div class="new-recipe">
+      <label for="imageURL">Снимка <span class="red">*</span></label>
+      <input #imageURL="ngModel" type="text" name="imageURL" id="imageURL" [ngModel]="recipe.imageURL" required >
+      <p class="error" *ngIf="imageURL.touched && imageURL.errors?.required">
+        The field with the image is required.
+      </p>
+    </div>
+    
+    <div class="clearfix">
+      <button type="reset" class="cancelbtn">Clear all</button>
+      <button class="signupbtn">Save</button>
+    </div>
+
+  </form>
 </div>
+
+<app-footer></app-footer>
