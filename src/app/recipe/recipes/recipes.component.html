@@ -1,5 +1,9 @@
 <app-header></app-header>
 
+<div *ngIf="!recipeList">
+  Loading...
+</div>
+
 <div class="res-cont" *ngIf="recipeList">
   <div class="recipe-card" *ngFor="let recipe of recipeList">
     <h3>{{recipe.title}}</h3>
@@ -12,12 +16,10 @@
 
     <div class="btns-container">
       <button type="submit" routerLink="/recipes/edit/{{recipe.objectId}}" class="btn-edit">EDIT</button>
-      <button type="submit" routerLink="/recipes/delete/{{recipe.objectId}}" class="btn-delete">DELETE</button>
+      <button type="submit" (click)="deleteRecipe(recipe.objectId)" class="btn-delete">DELETE</button>
     </div>
   </div>
   <div *ngIf="recipeList.length === 0">No Recipes!</div>
 </div>
-<div *ngIf="!recipeList">
-  Loading...
-</div>
+
 <app-footer></app-footer>

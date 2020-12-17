@@ -28,4 +28,8 @@ export class RecipeService {
       .post<IRecipe>(`${this.backendURL}/data/recipes`, data);
   }
 
+  deleteRecipe(id: string): Observable<any> {
+    return this.http.delete(`${this.backendURL}/data/recipes/${id}`);
+  }
+
 }

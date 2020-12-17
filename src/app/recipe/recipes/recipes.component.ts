@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IRecipe } from 'src/app/shared/interfaces/recipe';
 import { UserService } from 'src/app/user/user.service';
 import { RecipeService } from '../recipe.service';
@@ -19,11 +19,19 @@ export class RecipesComponent implements OnInit {
   }
   constructor(private userService: UserService,
     public recipeService: RecipeService,
-    private activatedRoute: ActivatedRoute) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.recipeService.loadRecipesByOwnerId(this.userService.userId).subscribe(recipeList => {
       this.recipeList = recipeList;
+    });
+  }
+
+  deleteRecipe(id: string) {
+    this.recipeService.deleteRecipe(id).subscribe(() => {
+      this.recipeService.loadRecipesByOwnerId(this.userService.userId).subscribe(recipeList => {
+        this.recipeList = recipeList;
+      });
     });
   }
 
