@@ -19,9 +19,16 @@
     </div>
   </section>
 
+  <div class="form-group">
+    <label for="search-text">Search Text</label>
+    <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+      [(ngModel)]="searchText" placeholder="Enter text to search" 
+      autofocus>
+  </div>
+
   <div class="recipes-container">
 
-    <div *ngFor="let recipe of recipeList" class="recipe-card">
+    <div *ngFor="let recipe of recipeList | filter: searchText" class="recipe-card">
       <h3>{{recipe.title}}</h3>
       <img class="image-recipe" src="{{recipe.imageURL}}">
       <button type="submit" routerLink="/recipes/detail/{{recipe.objectId}}" class="btn">Виж цялата рецепта</button>

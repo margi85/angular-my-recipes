@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   recipe: IRecipe = <any>{};
   recipeList: IRecipe[] = [];
-
+  searchText: string;
+  
   get isLogged(): boolean {
     return this.userService.isLogged;
   }

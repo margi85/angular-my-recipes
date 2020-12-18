@@ -4,11 +4,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { storageServiceProvider } from './storage.service';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { storageServiceProvider } from './storage.service';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   providers: [
     storageServiceProvider

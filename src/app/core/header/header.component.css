@@ -1,11 +1,10 @@
 
-
 #header {
-  background-color: rgb(64, 34, 92);
+  background-color: rgb(253, 209, 173);
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   position: relative;
-  border-bottom: 0.5rem solid rgb(236, 126, 75);
+  border-bottom: 0.2rem solid orangered;
 }
 
 .navbar {
@@ -22,9 +21,10 @@
   float: right;
 }
 .nav-link {
-  color: white;
+  color: orangered;
   text-decoration: none;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.1em;
 }
 
 .logo-svg {

@@ -1,6 +1,6 @@
 #footer {
-  border-top: 0.5rem solid  rgb(236, 126, 75);
-  background-color: rgb(64, 34, 92);
+  border-top: 0.1rem solid  orangered;
+  background-color: rgb(253, 209, 173);
   width: 100%;
   height: 3rem;
   position: relative;
@@ -8,7 +8,7 @@
 .footer-text {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 0.7rem;
-  color: rgb(255, 255, 255);
+  color: orangered;
   margin: 0;
   position: absolute;
   top: 50%;
