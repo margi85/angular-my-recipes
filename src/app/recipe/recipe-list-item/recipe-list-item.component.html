@@ -9,10 +9,10 @@
       <label for="title">Име на рецепта <span class="red">*</span></label>
       <input #title="ngModel" type="text" name="title" id="title" [ngModel]="recipe.title" required minlength="5">
       <p class="error" *ngIf="title.touched && title.errors?.required">
-        Recipe name is required.
+        Името е задължително!
       </p>
       <p class="error" *ngIf="title.touched && title.errors?.minlength">
-        Theme name must be at least 5 characters long.
+        Името трябва да е с поне 5 символа!
       </p>
     </div>
 
@@ -20,7 +20,7 @@
       <label for="ingredients">Съставки: <span class="red">*</span></label>
       <textarea #ingredients="ngModel" type="text" name="ingredients" id="ingredients" [ngModel]="recipe.ingredients" required ></textarea>
       <p class="error" *ngIf="ingredients.touched && ingredients.errors?.required">
-        The field with the ingredients is required.
+        Полето със съставки е задължително!
       </p>
     </div>
 
@@ -29,10 +29,10 @@
       <textarea #preparation="ngModel" type="text" name="preparation" id="preparation" rows="8" class="height" [ngModel]="recipe.preparation" required
         minlength="10"></textarea>
       <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
-        The field with your preparation method is required.
+        Полето с метода на подготовка е задължително!
       </p>
       <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
-        Preparation method must be at least 10 characters long.
+        Полето с метода на подготовка трябва да е поне 10 символа!
       </p>
     </div>
 
@@ -40,13 +40,13 @@
       <label for="imageURL">Снимка <span class="red">*</span></label>
       <input #imageURL="ngModel" type="text" name="imageURL" id="imageURL" [ngModel]="recipe.imageURL" required >
       <p class="error" *ngIf="imageURL.touched && imageURL.errors?.required">
-        The field with the image is required.
+        Снимката трябва да се попълни!
       </p>
     </div>
     
     <div class="clearfix">
-      <button type="reset" class="cancelbtn">Clear all</button>
-      <button class="signupbtn">Save</button>
+      <button type="reset" class="cancelbtn">Изчисти всичко</button>
+      <button class="signupbtn">Запази</button>
     </div>
 
   </form>

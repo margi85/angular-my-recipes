@@ -9,10 +9,10 @@
       <label for="title">Име на рецепта <span class="red">*</span></label>
       <input #title="ngModel" type="text" name="title" id="title" ngModel required minlength="5">
       <p class="error" *ngIf="title.touched && title.errors?.required">
-        Recipe name is required.
+        Необходимо е име на рецепта.
       </p>
       <p class="error" *ngIf="title.touched && title.errors?.minlength">
-        Theme name must be at least 5 characters long.
+        Името трябва да е минимум 5 символа.
       </p>
     </div>
 
@@ -20,7 +20,7 @@
       <label for="ingredients">Съставки: <span class="red">*</span></label>
       <textarea #ingredients="ngModel" type="text" name="ingredients" id="ingredients" ngModel required ></textarea>
       <p class="error" *ngIf="ingredients.touched && ingredients.errors?.required">
-        The field with the ingredients is required.
+        Необходимо е да попълните полето със съставки.
       </p>
     </div>
 
@@ -29,10 +29,10 @@
       <textarea #preparation="ngModel" type="text" name="preparation" id="preparation" rows="8" class="height" ngModel required
         minlength="10"></textarea>
       <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
-        The field with your preparation method is required.
+        Необходимо е да попълните полето за приготвяне.
       </p>
-      <p class="error" *ngIf="preparation.touched && preparation.errors?.required">
-        Preparation method must be at least 10 characters long.
+      <p class="error" *ngIf="preparation.touched && preparation.errors?.minlength">
+        Полето за подготовка трябва да е по-дълго от 10 символа.
       </p>
     </div>
 
@@ -40,13 +40,13 @@
       <label for="imageURL">Снимка <span class="red">*</span></label>
       <input #imageURL="ngModel" type="text" name="imageURL" id="imageURL" ngModel required >
       <p class="error" *ngIf="imageURL.touched && imageURL.errors?.required">
-        The field with the image is required.
+        Необходимо е да попълните полето за снимка.
       </p>
     </div>
     
     <div class="clearfix">
-      <button type="reset" class="cancelbtn">Cancel</button>
-      <button class="signupbtn">Post</button>
+      <button type="reset" class="cancelbtn">Откажи</button>
+      <button [disabled]="!f.valid" class="signupbtn">Запази</button>
     </div>
 
   </form>

@@ -4,38 +4,35 @@
   <section class="container-image">
     <img class="back-image" src="../../assets/back-1.jpg" alt="background My recipes" />
     <div class="text-back">
-      <p class="title-our-recipes">Welcome!</p>
+      <p class="title-our-recipes">Добре дошли!</p>
       <p>MY RECIPES е създадена, за да улесни хората при избора си на вкусни и атрактивни рецепти. Тук всеки може да
         разгърне потенциала си.</p>
-        
+
       <div class="logged" *ngIf="!isLogged">
         <div class="not-logged">Ако все още не сте регистрирани може да го направите от тук: </div>
 
         <a routerLink="/register">
-          REGISTER
+          РЕГИСТРИРАЙ МЕ
         </a>
 
       </div>
     </div>
   </section>
-
-  <div class="form-group">
-    <label for="search-text">Search Text</label>
-    <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
-      [(ngModel)]="searchText" placeholder="Enter text to search" 
-      autofocus>
-  </div>
-
-  <div class="recipes-container">
-
-    <div *ngFor="let recipe of recipeList | filter: searchText" class="recipe-card">
-      <h3>{{recipe.title}}</h3>
-      <img class="image-recipe" src="{{recipe.imageURL}}">
-      <button type="submit" routerLink="/recipes/detail/{{recipe.objectId}}" class="btn">Виж цялата рецепта</button>
+  <section class="container">
+    <div class="form-group">
+      <label for="search-text">Търсене на рецепта</label>
+      <input type="email" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+        placeholder="Въведете рецепта" autofocus style="border:1px solid #d4cfcf">
     </div>
 
-  </div>
+    <div class="recipes-container">
+      <div *ngFor="let recipe of recipeList | filter: searchText" class="recipe-card">
+        <img class="image-recipe" src="{{recipe.imageURL}}">
+        <h3>{{recipe.title}}</h3>
+        <button type="submit" routerLink="/recipes/detail/{{recipe.objectId}}" class="btn">Виж цялата рецепта</button>
+      </div>
+    </div>
 
-
+  </section>
   <app-footer></app-footer>
 </div>

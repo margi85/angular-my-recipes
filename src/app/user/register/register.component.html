@@ -2,54 +2,54 @@
 <form class="register-form" [formGroup]="form" (ngSubmit)="submitHandler()" style="border:1px solid #ccc">
   <div class="register-container">
     <h2 class="sign-up-reg">Sign Up</h2>
-    <p class="sign-up-reg">Please fill in this form to create an account.</p>
+    <p class="sign-up-reg">Моля попълнете полетата, за да създадете акаунт.</p>
     <hr>
 
-    <label for="email"><span><b>Email</b></span></label>
+    <label for="email"><span><b>Имейл</b></span></label>
     <input [class.input-error]="form.get('email').touched && !!form.get('email').errors" type="email" name="email"
       id="email" placeholder="john.doe@gmail.com" formControlName="email">
     <p *ngIf="form.get('email').touched && form.get('email').errors?.required" class="error">
-      Email is required!
+      Необходимо е да попълните имейл!
     </p>
     <p *ngIf="form.get('email').touched && form.get('email').errors?.emailValidator" class="error">
-      Email is not valid!
+      Имейла не е валиден!
     </p>
 
     <!-- password -->
 
-    <label for="password"><span><b>Password</b></span></label>
+    <label for="password"><span><b>Парола</b></span></label>
     <input [class.input-error]="form.get('password').touched && !!form.get('password').errors" type="password"
       name="password" id="password" placeholder="******" formControlName="password">
 
     <p *ngIf="form.get('password').touched && form.get('password').errors?.required" class="error">
-      Password is required!
+      Необходимо е да попълните парола!
     </p>
     <p *ngIf="form.get('password').touched && form.get('password').errors?.minlength" class="error">
-      Password must be at least 4 characters!
+      Паролата трябва да е минимум 4 символа!
     </p>
 
     <!-- rePassword -->
 
-    <label for="rePassword"><span><b>Repeat password</b></span></label>
+    <label for="rePassword"><span><b>Повторяне на парола</b></span></label>
     <input [class.input-error]="form.get('rePassword').touched && !!form.get('rePassword').errors" type="password"
       name="rePassword" id="rePassword" placeholder="******" formControlName="rePassword">
 
     <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.rePasswordValidator" class="error">
-      Repeat Password does not match password!
+      Повторението на паролата не съответства с паролата!
     </p>
     <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.required" class="error">
-      Repeat Password is required!
+      Необходимо е да повторите паролата!
     </p>
 
     <!-- <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label> -->
 
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <!-- <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
 
     <div class="clearfix">
-      <button type="reset" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="reset" class="cancelbtn">Откажи</button>
+      <button [disabled]="isLoading || form.invalid" type="submit" class="signupbtn">Регистрирай ме</button>
     </div>
     <app-loader [isLoading]="isLoading"></app-loader>
   </div>

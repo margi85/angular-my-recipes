@@ -4,23 +4,23 @@
   <ul class="navbar">
     <!-- {{#if isLoggedIn}} -->
     <li *ngIf="isLogged"  class="nav-item">
-      <a class="nav-link" routerLink="/recipes">My Recipes</a>
+      <a class="nav-link" routerLink="/recipes">Моите рецепти</a>
     </li>
     <li *ngIf="isLogged"  class="nav-item">
-      <a class="nav-link" routerLink="/recipes/new">New Recipe</a>
+      <a class="nav-link" routerLink="/recipes/new">Нова Рецепта</a>
     </li>
     <li *ngIf="isLogged" class="nav-item">
-      <a class="nav-link" href="/" (click)="logoutHandler()">Logout</a>
+      <a class="nav-link" href="/" (click)="logoutHandler()">Отписване</a>
     </li>
     <!-- {{else}} -->
     <li class="nav-item">
-      <a *ngIf="!isLogged" class="nav-link" routerLink="/about/">About</a>
+      <a *ngIf="!isLogged" class="nav-link" routerLink="/about/">За сайта</a>
     </li>
     <li class="nav-item">
-      <a *ngIf="!isLogged" class="nav-link" routerLink="/login" >Login</a>
+      <a *ngIf="!isLogged" class="nav-link" routerLink="/login" >Вписване</a>
     </li>
     <li class="nav-item">
-      <a *ngIf="!isLogged" class="nav-link" routerLink="/register" >Register</a>
+      <a *ngIf="!isLogged" class="nav-link" routerLink="/register" >Регистриране</a>
     </li>
     <!-- {{/if}} -->
   </ul>
