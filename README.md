@@ -1,6 +1,10 @@
 # MyRecipes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+My Recipes project for SOFTUNI
+
+## Installation
+
+`npm i`
 
 ## Development server
 
