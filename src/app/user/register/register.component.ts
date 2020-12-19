@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
     const passwordlControl = this.fb.control('', [Validators.required, Validators.minLength(4)]);
 
     this.form = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, emailValidator]],
       password: passwordlControl,
       rePassword: ['', [Validators.required, Validators.minLength(4), rePasswordValidatorFactory(passwordlControl)]],
